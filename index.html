@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prototype BRI Notification</title>
+<title>Prototype Notifikasi WhatsApp BRI</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
 body{
 
-margin:0;
-background:#ece5dd;
-font-family:Arial;
+background:#ECE5DD;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -26,87 +30,85 @@ height:100vh;
 
 width:390px;
 height:780px;
-background:white;
+background:#ECE5DD;
 border-radius:35px;
 overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.3);
+box-shadow:0 20px 50px rgba(0,0,0,.25);
 
 }
 
-.progress{
-
-width:220px;
-height:10px;
-background:#ffffff55;
-border-radius:30px;
-margin-top:30px;
-overflow:hidden;
-
-}
-
-.bar{
-
-height:100%;
-width:0%;
-background:white;
-animation:load 2s linear forwards;
-
-}
-
-@keyframes load{
-
-100%{
-width:100%;
-}
-
-}
-
-#whatsapp{
-
-display:none;
-height:100%;
-background:#ECE5DD;
-
-}
+/* Header WhatsApp */
 
 .header{
 
 background:#075E54;
-padding:15px;
 color:white;
+padding:15px;
+display:flex;
+align-items:center;
+
+}
+
+.profile{
+
+width:48px;
+height:48px;
+border-radius:50%;
+background:#128C7E;
+display:flex;
+justify-content:center;
+align-items:center;
 font-size:22px;
+margin-right:12px;
+
+}
+
+.name{
+
+font-size:18px;
 font-weight:bold;
 
 }
 
+.status{
+
+font-size:12px;
+opacity:.9;
+
+}
+
+/* Chat */
+
 .chat{
 
 padding:20px;
+background:#ECE5DD;
+height:100%;
 
 }
 
 .bubble{
 
 background:white;
+width:90%;
 padding:18px;
-border-radius:12px;
-width:85%;
-box-shadow:0 3px 10px rgba(0,0,0,.2);
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
 
-transform:translateY(300px);
+transform:translateY(250px);
 opacity:0;
 
 }
 
 .show{
 
-animation:slideUp .8s forwards;
+animation:slideUp .8s ease forwards;
 
 }
 
 @keyframes slideUp{
 
-100%{
+to{
 
 transform:translateY(0);
 opacity:1;
@@ -115,48 +117,64 @@ opacity:1;
 
 }
 
+h3{
+
+margin-bottom:15px;
+color:#00529C;
+
+}
+
 button{
 
 margin-top:20px;
-padding:12px 20px;
-border:none;
-background:#0A84FF;
+background:#00529C;
 color:white;
-font-size:16px;
+border:none;
+padding:12px 20px;
 border-radius:8px;
+font-size:15px;
 cursor:pointer;
 animation:pulse 1.5s infinite;
+
+}
+
+button:hover{
+
+background:#003D73;
 
 }
 
 @keyframes pulse{
 
 0%{
-
 transform:scale(1);
-
 }
 
 50%{
-
 transform:scale(1.05);
-
 }
 
 100%{
-
 transform:scale(1);
-
 }
 
 }
 
-.time{
+.footer{
 
-text-align:right;
+display:flex;
+justify-content:flex-end;
+align-items:center;
+margin-top:15px;
 font-size:12px;
-margin-top:10px;
-color:gray;
+color:#777;
+
+}
+
+.tick{
+
+margin-left:5px;
+color:#53BDEB;
 
 }
 
@@ -168,11 +186,23 @@ color:gray;
 
 <div class="phone">
 
-<div id="whatsapp">
-
 <div class="header">
 
-WhatsApp
+<div class="profile">
+🏦
+</div>
+
+<div>
+
+<div class="name">
+BRI Info ✓
+</div>
+
+<div class="status">
+Business Account
+</div>
+
+</div>
 
 </div>
 
@@ -182,26 +212,31 @@ WhatsApp
 
 <h3>🔔 Pengingat KPR - H-60</h3>
 
-Halo Bapak Batman,
-
-<br><br>
-
-Kami ingin mengingatkan bahwa
-periode <b>Fixed Rate</b> KPR Anda akan
-berakhir dalam <b>60 hari</b>.
-
-<br><br>
-
-📅 Perubahan suku bunga
-
-<b>16 Juni 2026</b>
-
-<br><br>
-
-Silakan buka BRImo untuk melihat
-simulasi angsuran terbaru.
+<p>
+Halo <b>Bapak Batman</b>,
+</p>
 
 <br>
+
+<p>
+Kami ingin mengingatkan bahwa periode
+<b>Fixed Rate</b> KPR Anda akan berakhir
+dalam <b>60 hari</b>.
+</p>
+
+<br>
+
+<p>
+📅 <b>Tanggal Perubahan</b><br>
+16 Juni 2026
+</p>
+
+<br>
+
+<p>
+Silakan buka BRImo untuk melihat
+simulasi angsuran terbaru.
+</p>
 
 <button onclick="location.href='brimo.html'">
 
@@ -209,11 +244,11 @@ Lihat Detail di BRImo
 
 </button>
 
-<div class="time">
+<div class="footer">
 
 09.55
 
-</div>
+<span class="tick">✓✓</span>
 
 </div>
 
@@ -225,26 +260,21 @@ Lihat Detail di BRImo
 
 <script>
 
+window.onload=function(){
+
 setTimeout(function(){
-
-document.getElementById("loading").style.display="none";
-
-document.getElementById("whatsapp").style.display="block";
 
 let audio=new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
 
-audio.play();
-
-setTimeout(function(){
+audio.play().catch(()=>{});
 
 document.getElementById("bubble").classList.add("show");
 
-},500);
+},1000);
 
-},2000);
+}
 
 </script>
 
 </body>
-
 </html>
