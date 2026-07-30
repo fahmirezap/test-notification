@@ -124,23 +124,48 @@ color:#00529C;
 
 }
 
-button{
+.brimo-card{
 
 margin-top:20px;
-background:#00529C;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:8px;
-font-size:15px;
+background:#F8F9FA;
+border:1px solid #E0E0E0;
+border-radius:12px;
+padding:15px;
 cursor:pointer;
-animation:pulse 1.5s infinite;
+transition:.3s;
 
 }
 
-button:hover{
+.brimo-card:hover{
 
-background:#003D73;
+background:#EEF5FF;
+border-color:#00529C;
+
+}
+
+.brimo-title{
+
+font-weight:bold;
+font-size:16px;
+color:#00529C;
+margin-bottom:8px;
+
+}
+
+.brimo-desc{
+
+font-size:14px;
+color:#555;
+line-height:1.5;
+
+}
+
+.brimo-open{
+
+margin-top:12px;
+text-align:right;
+font-weight:bold;
+color:#00529C;
 
 }
 
@@ -238,11 +263,28 @@ Silakan buka BRImo untuk melihat
 simulasi angsuran terbaru.
 </p>
 
-<button onclick="location.href='brimo.html'">
+<div class="brimo-card"
+     onclick="location.href='brimo.html'">
 
-Lihat Detail di BRImo
+<div class="brimo-title">
+📱 BRImo
+</div>
 
-</button>
+<div class="brimo-desc">
+
+Lihat detail perubahan suku bunga,
+simulasi angsuran terbaru,
+dan informasi lengkap pinjaman Anda.
+
+</div>
+
+<div class="brimo-open">
+
+Buka >
+
+</div>
+
+</div>
 
 <div class="footer">
 
