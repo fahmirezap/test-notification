@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Login BRImo</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+background:#0C78D1;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.phone{
+
+width:390px;
+height:780px;
+background:white;
+overflow:hidden;
+border-radius:35px;
+
+}
+
+.top{
+
+height:230px;
+background:linear-gradient(#0C78D1,#177FD5);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+
+.logo{
+
+font-size:48px;
+font-weight:bold;
+line-height:42px;
+
+}
+
+.subtitle{
+
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+
+}
+
+.content{
+
+padding:30px;
+
+}
+
+.input{
+
+margin-top:20px;
+
+}
+
+.input label{
+
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+
+}
+
+.input input{
+
+width:100%;
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+
+}
+
+button{
+
+margin-top:30px;
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+background:#0C78D1;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#00529C;
+
+}
+
+.error{
+
+margin-top:15px;
+color:red;
+text-align:center;
+
+}
+
+.demo{
+
+margin-top:40px;
+text-align:center;
+font-size:13px;
+color:#888;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="top">
+
+<div class="logo">
+
+BRI<br>mo
+
+</div>
+
+<div class="subtitle">
+
+Login BRImo
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="input">
+
+<label>Username</label>
+
+<input
+id="username"
+placeholder="Masukkan Username">
+
+</div>
+
+<div class="input">
+
+<label>Password</label>
+
+<input
+id="password"
+type="password"
+placeholder="Masukkan Password">
+
+</div>
+
+<button id="loginBtn">
+
+Login
+
+</button>
+
+<div id="error" class="error"></div>
+
+<div class="demo">
+
+Demo Login<br>
+
+Username : <b>admin</b><br>
+
+Password : <b>admin</b>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("loginBtn").addEventListener("click",function(){
+
+let u=document.getElementById("username").value;
+
+let p=document.getElementById("password").value;
+
+if(u==="admin" && p==="admin"){
+
+window.location="dashboard.html";
+
+}else{
+
+document.getElementById("error").innerHTML="Username atau Password salah.";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
